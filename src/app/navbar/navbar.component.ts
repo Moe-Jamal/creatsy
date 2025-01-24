@@ -6,7 +6,8 @@ import { SearchsvgComponent } from '../svg/searchsvg/searchsvg.component';
 import { CartsvgComponent } from '../svg/cartsvg/cartsvg.component';
 import { MenusvgComponent } from '../svg/menusvg/menusvg.component';
 import { UsersvgComponent } from '../svg/usersvg/usersvg.component';
-import { TooltipModule } from 'primeng/tooltip';
+import { Tooltip } from 'primeng/tooltip';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-navbar',
@@ -17,6 +18,8 @@ import { TooltipModule } from 'primeng/tooltip';
     CartsvgComponent,
     MenusvgComponent,
     UsersvgComponent,
+    Tooltip,
+    InputTextModule,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',

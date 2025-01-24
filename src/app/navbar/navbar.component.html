@@ -140,11 +140,11 @@
       <li
         class="truncate group relative ps-6"
         (mouseover)="mockupImage($index)"
+        pTooltip="{{ mockup.title }}"
+        tooltipPosition="left"
       >
         <i
           class="fa-solid fa-angle-right text-xs me-2 hidden group-hover:inline absolute left-[10px] top-[54%] -translate-y-1/2"
-          [attr.pTooltip]="mockup.title"
-          tooltipPosition="right"
         ></i>
         <a href="">{{ mockup.title }}</a>
       </li>
