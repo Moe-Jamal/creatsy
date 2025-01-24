@@ -21,23 +21,27 @@
             <app-searchsvg></app-searchsvg>
           </button>
         </div>
-        <div class="links">
-          <ul class="flex items-center gap-7">
+        <div class="links h-full">
+          <ul class="flex items-center gap-7 h-full">
             @for (link of desktopLinks; track $index ; let last = $last) {
-            <a href="" class="font-medium">
-              <li
-                class="uppercase text-sm"
+            <li
+              class="uppercase font-medium text-sm h-full flex items-center last:before:h-[14px] last:before:w-[1px] last:before:bg-black last:before:absolute last:before:start-0"
+              [class]="{
+                'px-7': last,
+                'relative' : last,
+              }"
+              (mouseover)="$index === 1 && openDesktopManu()"
+              (mouseleave)="$index === 1 && closeDesktopMenu()"
+            >
+              <a
+                href=""
                 [class]="{
-                  'px-7': last,
-                  'border-l-[1px]': last,
-                  'border-black': last,
-                  'font-bold': last,
-                }"
-                (mouseover)="$index === 1 && openDesktopManu()"
+                'font-bold': last,
+              }"
               >
                 {{ link }}
-              </li>
-            </a>
+              </a>
+            </li>
             }
           </ul>
         </div>
@@ -109,9 +113,10 @@
   </nav>
   <!-- =========================== Desktop submenu =========================== -->
   <div
-    class="sub-menu ms-[250px] me-0 xl:me-[85px] flex h-[360px] border-[1px] border-[#ddd] border-r-0 border-t-0 lg-xl:border-r-[1px] transition-all duration-300 origin-top z-20"
+    class="sub-menu ms-[249px] me-0 xl:me-[84px] flex h-[360px] border-[1px] border-[#ddd] border-r-0 border-t-0 lg-xl:border-r-[1px] transition-all duration-300 origin-top z-20"
     [class]="menuDeskOpened ? 'opacity-100' : 'opacity-0'"
     [class]="menuDeskOpened ? 'scale-y-100' : 'scale-y-0'"
+    (mouseenter)="openDesktopManu()"
     (mouseleave)="closeDesktopMenu()"
   >
     <!-- =========================== Submenu Image =========================== -->
@@ -128,13 +133,18 @@
     </div>
     <!-- =========================== submenu links =========================== -->
     <ul
-      class="grid grid-cols-4 gap-[10px] my-8 px-6 flex-grow [&_li:last-child_a]:underline"
+      class="grid grid-cols-4 gap-[10px] pe-3 my-8 flex-grow [&_li:last-child_a]:underline"
     >
-      <li><p class="font-bold">Mockups:</p></li>
+      <li><p class="font-bold ps-6">Mockups:</p></li>
       @for (mockup of Mockups; track $index) {
-      <li class="truncate group" (mouseover)="mockupImage($index)">
+      <li
+        class="truncate group relative ps-6"
+        (mouseover)="mockupImage($index)"
+      >
         <i
-          class="fa-solid fa-angle-right text-xs me-2 hidden group-hover:inline"
+          class="fa-solid fa-angle-right text-xs me-2 hidden group-hover:inline absolute left-[10px] top-[54%] -translate-y-1/2"
+          [attr.pTooltip]="mockup.title"
+          tooltipPosition="right"
         ></i>
         <a href="">{{ mockup.title }}</a>
       </li>

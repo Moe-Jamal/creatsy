@@ -6,6 +6,7 @@ import { SearchsvgComponent } from '../svg/searchsvg/searchsvg.component';
 import { CartsvgComponent } from '../svg/cartsvg/cartsvg.component';
 import { MenusvgComponent } from '../svg/menusvg/menusvg.component';
 import { UsersvgComponent } from '../svg/usersvg/usersvg.component';
+import { TooltipModule } from 'primeng/tooltip';
 
 @Component({
   selector: 'app-navbar',
