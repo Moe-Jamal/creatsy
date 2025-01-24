@@ -1,0 +1,211 @@
+<header class="fixed top-0 w-full bg-white z-40">
+  <nav class="navbar flex h-[55px] lg-xl:h-[85px]">
+    <!-- =========================== Website Logo ===========================  -->
+    <div class="logo w-[70px] md:w-[100px] lg-xl:w-[250px] bg-main-color">
+      <a href="" class="h-full flex justify-center items-center p-4">
+        <app-logosvg></app-logosvg>
+        <span
+          class="text-[10px] ps-2 italic text-nowrap text-gray-300 hidden lg-xl:block"
+          >Quality is everything.</span
+        >
+      </a>
+    </div>
+    <div class="border-b-[1px] border-[#ddd] h-full flex-grow">
+      <!-- =========================== Desktop Navbar links =========================== -->
+      @if (hideSearch) {
+      <div
+        class="nav-links justify-between h-full items-center animate__animated animate__fadeIn hidden lg-xl:flex"
+      >
+        <div class="search-icon flex items-center px-6">
+          <button (click)="hideSearchDiv()">
+            <app-searchsvg></app-searchsvg>
+          </button>
+        </div>
+        <div class="links">
+          <ul class="flex items-center gap-7">
+            @for (link of desktopLinks; track $index ; let last = $last) {
+            <a href="" class="font-medium">
+              <li
+                class="uppercase text-sm"
+                [class]="{
+                  'px-7': last,
+                  'border-l-[1px]': last,
+                  'border-black': last,
+                  'font-bold': last,
+                }"
+                (mouseover)="$index === 1 && openDesktopManu()"
+              >
+                {{ link }}
+              </li>
+            </a>
+            }
+          </ul>
+        </div>
+      </div>
+      }
+      <!-- =========================== Desktop Searchbar =========================== -->
+      @else {
+      <div
+        class="search-box justify-between h-full items-center animate__animated animate__fadeIn hidden lg-xl:flex"
+      >
+        <div
+          class="categories px-6 relative cursor-pointer"
+          (click)="openList()"
+        >
+          <span class="uppercase font-semibold text-sm select-none">{{
+            myOption
+          }}</span>
+          <i class="fa-solid fa-chevron-down text-[10px] px-2"></i>
+          <div
+            class="categories-list absolute left-0 bg-white mt-[30px] border-[1px] border-[#ddd] p-4 border-t-0 transition-all duration-200 origin-top w-[180px] z-30"
+            [class]="listIsOpened ? 'opacity-100' : 'opacity-0'"
+            [class]="listIsOpened ? 'scale-y-100' : 'scale-y-0'"
+          >
+            <ul>
+              @for (item of categoriesList; track $index; let first = $first) {
+              <li
+                class="ps-[10px] pe-2 py-2 uppercase text-sm hover:font-bold"
+                [class.font-bold]="first"
+                [class]="activeIndex === $index ? 'font-bold' : 'font-normal'"
+                #cateOption
+                (click)="selectedCategorie($index)"
+              >
+                {{ item }}
+              </li>
+              }
+            </ul>
+          </div>
+        </div>
+        <div class="search-input h-full flex-grow flex items-center">
+          <input
+            #searchInput
+            type="text"
+            placeholder="Search"
+            class="w-full outline-none placeholder:text-sm"
+          />
+        </div>
+        <div
+          class="exit-search w-[85px] bg-main-color h-full flex items-center justify-center cursor-pointer"
+          (click)="hideSearchDiv()"
+        >
+          <app-exitsvg></app-exitsvg>
+        </div>
+      </div>
+      }
+      <!-- =========================== Mobile menu icons =========================== -->
+      <div
+        class="mobile-menu-icon flex justify-between h-full items-center p-4 lg-xl:hidden"
+      >
+        <app-menusvg (click)="openMobileManu()"></app-menusvg>
+        <app-usersvg></app-usersvg>
+      </div>
+    </div>
+    <!-- =========================== Cart button ===========================  -->
+    <div
+      class="cart w-[60px] lg-xl:w-[85px] bg-secondry-color h-full flex justify-center items-center border-b-[1px] border-l-[1px] border-[#ddd] cursor-pointer"
+    >
+      <app-cartsvg></app-cartsvg>
+    </div>
+  </nav>
+  <!-- =========================== Desktop submenu =========================== -->
+  <div
+    class="sub-menu ms-[250px] me-0 xl:me-[85px] flex h-[360px] border-[1px] border-[#ddd] border-r-0 border-t-0 lg-xl:border-r-[1px] transition-all duration-300 origin-top z-20"
+    [class]="menuDeskOpened ? 'opacity-100' : 'opacity-0'"
+    [class]="menuDeskOpened ? 'scale-y-100' : 'scale-y-0'"
+    (mouseleave)="closeDesktopMenu()"
+  >
+    <!-- =========================== Submenu Image =========================== -->
+    <div class="w-[360px] h-full hidden xl:block">
+      @if (showDiv) {
+      <div class="img-holder w-full h-full">
+        <img
+          [src]="imageSrc"
+          alt=""
+          class="w-full h-full object-cover animate__animated animate__fadeIn"
+        />
+      </div>
+      }
+    </div>
+    <!-- =========================== submenu links =========================== -->
+    <ul
+      class="grid grid-cols-4 gap-[10px] my-8 px-6 flex-grow [&_li:last-child_a]:underline"
+    >
+      <li><p class="font-bold">Mockups:</p></li>
+      @for (mockup of Mockups; track $index) {
+      <li class="truncate group" (mouseover)="mockupImage($index)">
+        <i
+          class="fa-solid fa-angle-right text-xs me-2 hidden group-hover:inline"
+        ></i>
+        <a href="">{{ mockup.title }}</a>
+      </li>
+      }
+    </ul>
+    <div
+      class="other w-[240px] my-8 px-4 text-center border-l-[1px] border-[#ddd]"
+    >
+      <ul>
+        <li class="uppercase font-bold text-sm mb-3 text-nowrap">
+          <a href="">Isolated Objects</a>
+        </li>
+        <li class="uppercase font-bold text-sm mb-3 text-nowrap">
+          <a href="">Print Templates</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- =========================== Mobile Navbar links =========================== -->
+  @if (menuMobOpened) {
+  <div
+    class="mobile-menu fixed top-0 z-50 max-h-screen w-screen bg-white overflow-auto animate__animated animate__fadeIn"
+  >
+    <div class="mobile-search h-[55px] border-b-[1px] border-[#ddd] flex">
+      <div
+        class="exit-search w-[55px] h-full bg-main-color flex justify-center items-center cursor-pointer"
+        (click)="closeMobileMenu()"
+      >
+        <i class="fa-solid fa-angle-left text-gray-200"></i>
+      </div>
+      <div class="search-input h-full flex-grow flex items-center p-4">
+        <input
+          #searchInput
+          type="text"
+          placeholder="Search"
+          class="w-full outline-none placeholder:text-sm"
+        />
+      </div>
+    </div>
+    <div class="mobile-links px-[55px] py-[40px] flex flex-col md:flex-row">
+      <ul class="flex-grow mt-5 md:mt-0">
+        <li class="font-bold mb-5"><a href="">Mockups:</a></li>
+        @for (mockup of Mockups.slice(0,18); track $index) {
+        <li class="mb-5">
+          <a href="">{{ mockup.title }}</a>
+        </li>
+        }
+      </ul>
+      <ul class="flex-grow">
+        @for (mockup of Mockups.slice(18); track $index) {
+        <li class="mb-5">
+          <a href="" [class.underline]="$last">{{ mockup.title }}</a>
+        </li>
+        }
+        <li class="uppercase font-bold mb-5">
+          <a href="">Isolated Objects</a>
+        </li>
+        <li class="uppercase font-bold mb-5">
+          <a href="">Print Templates</a>
+        </li>
+      </ul>
+      <ul
+        class="flex-grow md:ps-[40px] border-b-[1px] md:border-l-[1px] md:border-b-0 border-[#ddd] -order-1 md:order-1"
+      >
+        @for (link of mobileLinks; track $index) {
+        <li class="font-bold uppercase mb-5">
+          <a href="">{{ link }}</a>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+  }
+</header>
