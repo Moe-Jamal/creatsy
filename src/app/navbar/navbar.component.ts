@@ -214,7 +214,8 @@ export class NavbarComponent {
         'https://creatsy.com/assets/images/nav/shop/categories/category-all-mockups.jpg',
     },
   ];
-
+  brandColor: string = '#fff';
+  brandSize: string = 'w-[50px] md:w-[75px] lg-xl:w-[100px]';
   listIsOpened: boolean = false;
   myOption: string = 'All Categories';
   imageSrc: string = './category-adult-apparel.jpg';

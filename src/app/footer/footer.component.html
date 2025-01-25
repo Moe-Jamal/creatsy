@@ -1,0 +1,181 @@
+<footer class="md:px-0">
+  <div class="container mx-auto px-5 sm:px-0">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10 border-b-[1px] border-main-color py-sec-p"
+    >
+      <div class="logo">
+        <app-logosvg
+          [logoColor]="brandColor"
+          [logoSize]="brandSize"
+        ></app-logosvg>
+      </div>
+      @if (isDesktop) {
+      <div class="company">
+        <p class="uppercase font-bold mb-5">The Company</p>
+        <ul>
+          @for (link of theCompany; track $index) {
+          <li class="mb-3">
+            <a href="">{{ link }}</a>
+          </li>
+          }
+        </ul>
+      </div>
+      <div class="resources">
+        <p class="uppercase font-bold mb-5">resources</p>
+        <ul>
+          @for (link of resources; track $index) {
+          <li class="mb-3">
+            <a href="">{{ link }}</a>
+          </li>
+          }
+        </ul>
+      </div>
+      <div class="policies col-start-2 xl:col-start-4">
+        <p class="uppercase font-bold mb-5">policies</p>
+        <ul>
+          @for (link of policies; track $index) {
+          <li class="mb-3">
+            <a href="">{{ link }}</a>
+          </li>
+          }
+        </ul>
+      </div>
+      }
+      <div class="subscripe">
+        <h3 class="font-semibold text-2xl mb-5">
+          Grab 10% off first purchase and get instant updates about news and
+          promos.
+        </h3>
+        <div class="input-group relative border-b-[1px] border-main-color">
+          <input
+            type="text"
+            placeholder="Email address"
+            class="w-full outline-none py-2 ps-1 pe-6 placeholder:text-sm"
+          />
+          <button class="absolute top-[54%] -translate-y-1/2 right-0">
+            <i class="fa-solid fa-arrow-right-long text-gray-500"></i>
+          </button>
+        </div>
+      </div>
+      @if (!isDesktop) {
+      <div
+        class="card flex justify-content-center md:col-span-2 border-t-[1px] border-[#e2e8f0]"
+      >
+        <p-accordion [multiple]="true" class="w-full">
+          <p-accordion-panel value="0">
+            <p-accordion-header>
+              <span>THE COMPANY</span>
+              <ng-template #toggleicon let-active="active">
+                @if (active) {
+                <i class="fa-solid fa-minus"></i>
+                } @else {
+                <i class="fa-solid fa-plus"></i>
+                }
+              </ng-template></p-accordion-header
+            >
+            <p-accordion-content>
+              <ul>
+                @for (link of theCompany; track $index) {
+                <li class="mb-3">
+                  <a href="">{{ link }}</a>
+                </li>
+                }
+              </ul>
+            </p-accordion-content>
+          </p-accordion-panel>
+          <p-accordion-panel value="1">
+            <p-accordion-header class="uppercase font-bold"
+              ><span>RESOURCES</span>
+              <ng-template #toggleicon let-active="active">
+                @if (active) {
+                <i class="fa-solid fa-minus"></i>
+                } @else {
+                <i class="fa-solid fa-plus"></i>
+                }
+              </ng-template></p-accordion-header
+            >
+            <p-accordion-content>
+              <ul>
+                @for (link of resources; track $index) {
+                <li class="mb-3">
+                  <a href="">{{ link }}</a>
+                </li>
+                }
+              </ul>
+            </p-accordion-content>
+          </p-accordion-panel>
+          <p-accordion-panel value="2">
+            <p-accordion-header class="uppercase font-bold"
+              ><span>POLICIES</span>
+              <ng-template #toggleicon let-active="active">
+                @if (active) {
+                <i class="fa-solid fa-minus"></i>
+                } @else {
+                <i class="fa-solid fa-plus"></i>
+                }
+              </ng-template></p-accordion-header
+            >
+            <p-accordion-content>
+              <ul>
+                @for (link of policies; track $index) {
+                <li class="mb-3">
+                  <a href="">{{ link }}</a>
+                </li>
+                }
+              </ul>
+            </p-accordion-content>
+          </p-accordion-panel>
+        </p-accordion>
+      </div>
+      }
+    </div>
+  </div>
+  <p class="text-xs text-center mt-8 mb-10">
+    © 2025 Creatsy. All Rights Reserved.
+  </p>
+
+  <ul class="grid grid-cols-6 border-y-[1px]">
+    <a href="">
+      <li
+        class="text-center border-r-[1px] py-4 text-main-color transition-colors duration-[0.4s] ease-in hover:bg-main-color hover:text-white"
+      >
+        <i class="fa-brands fa-facebook-f text-[20px]"></i>
+      </li>
+    </a>
+    <a href="">
+      <li
+        class="text-center border-r-[1px] py-4 text-main-color transition-colors duration-[0.4s] ease-in hover:bg-main-color hover:text-white"
+      >
+        <i class="fa-brands fa-behance text-[20px]"></i>
+      </li>
+    </a>
+    <a href="">
+      <li
+        class="text-center border-r-[1px] py-4 text-main-color transition-colors duration-[0.4s] ease-in hover:bg-main-color hover:text-white"
+      >
+        <i class="fa-brands fa-x-twitter text-[20px]"></i>
+      </li>
+    </a>
+    <a href="">
+      <li
+        class="text-center border-r-[1px] py-4 text-main-color transition-colors duration-[0.4s] ease-in hover:bg-main-color hover:text-white"
+      >
+        <i class="fa-brands fa-instagram text-[20px]"></i>
+      </li>
+    </a>
+    <a href="">
+      <li
+        class="text-center border-r-[1px] py-4 text-main-color transition-colors duration-[0.4s] ease-in hover:bg-main-color hover:text-white"
+      >
+        <i class="fa-brands fa-pinterest-p text-[20px]"></i>
+      </li>
+    </a>
+    <a href="">
+      <li
+        class="text-center py-4 text-main-color transition-colors duration-[0.4s] ease-in hover:bg-main-color hover:text-white"
+      >
+        <i class="fa-brands fa-youtube text-[20px]"></i>
+      </li>
+    </a>
+  </ul>
+</footer>
