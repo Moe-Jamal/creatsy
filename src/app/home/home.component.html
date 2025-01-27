@@ -1,22 +1,27 @@
-<div class="hero-slider relative h-[75vh]">
-  <swiper-container class="mySwiper" navigation="true">
+<div class="hero-slider relative h-[75vh] overflow-hidden">
+  <swiper-container
+    #swiperContainer
+    class="mySwiper"
+    navigation="false"
+    loop="true"
+  >
     <swiper-slide class="relative">
       <img
         src="https://creatsy.com/assets/modules/home/slider/slides/affiliate/slide-affiliate-md.webp"
         alt=""
       />
       <div
-        class="caption absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        class="caption absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-white"
       >
         <div class="title border-b-[1px] border-[#ddd] pb-6 mb-6">
           <h1
-            class="text-white text-[55px] font-serif lg:text-[70px] 2xl:text-[90px] tracking-[-2px] leading-tight"
+            class="text-[55px] font-serif lg:text-[70px] 2xl:text-[90px] tracking-[-2px] leading-tight"
           >
             Affiliate <br />
             Program is Here!
           </h1>
         </div>
-        <p class="mb-6 text-white">
+        <p class="mb-6">
           Do you love sharing Creatsy’s stunning mockups with your audience?
           Earn up to
           <span class="font-bold"> 15% commission for every new customer</span>
@@ -41,4 +46,12 @@
     <swiper-slide>Slide 8</swiper-slide>
     <swiper-slide>Slide 9</swiper-slide>
   </swiper-container>
+  <button class="custom-prev" (click)="slidePrev()">
+    <i class="fa-solid fa-chevron-left text-3xl"></i>
+    <app-slashsvg></app-slashsvg>
+  </button>
+  <button class="custom-next" (click)="slideNext()">
+    <i class="fa-solid fa-chevron-right text-3xl"></i>
+    <app-slashsvg></app-slashsvg>
+  </button>
 </div>
