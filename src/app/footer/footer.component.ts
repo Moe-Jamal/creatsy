@@ -1,13 +1,11 @@
-import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
-import { LogosvgComponent } from '../svg/logosvg/logosvg.component';
-import { AccordionModule } from 'primeng/accordion';
 import { isPlatformBrowser } from '@angular/common';
-import { AvatarModule } from 'primeng/avatar';
-import { BadgeModule } from 'primeng/badge';
+import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { AccordionModule } from 'primeng/accordion';
+import { LogosvgComponent } from '../svg/logosvg/logosvg.component';
 
 @Component({
   selector: 'app-footer',
-  imports: [LogosvgComponent, AccordionModule, AvatarModule, BadgeModule],
+  imports: [LogosvgComponent, AccordionModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
 })
@@ -19,7 +17,7 @@ export class FooterComponent {
   }
   brandColor: string = '#191919';
   brandSize: string = 'w-[150px]';
-
+  btnVariant: string = 'btn-black';
   theCompany: string[] = [
     'About',
     'Contact us',
@@ -49,7 +47,7 @@ export class FooterComponent {
   }
   cheackScreenSize() {
     if (this.isBrowserOnly) {
-      if (window.innerWidth <= 1024) {
+      if (window.innerWidth < 1024) {
         this.isDesktop = false;
       } else {
         this.isDesktop = true;

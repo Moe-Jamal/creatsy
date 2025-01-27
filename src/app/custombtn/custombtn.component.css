@@ -1,0 +1,7 @@
+.btn-black {
+    @apply bg-main-color text-white hover:bg-transparent hover:text-main-color hover:border-[1px] hover:border-[#ddd]
+}
+
+.btn-trans {
+    @apply bg-transparent text-main-color border-[1px] border-[#ddd] hover:bg-main-color hover:text-white hover:border-none
+}

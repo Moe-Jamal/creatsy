@@ -29,9 +29,11 @@
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "node_modules/animate.css/animate.min.css",
+              "node_modules/swiper/swiper-bundle.min.css",
               "src/styles.css"
             ], 
-            "scripts": [],
+            "scripts": [
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
