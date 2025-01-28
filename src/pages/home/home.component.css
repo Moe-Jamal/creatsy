@@ -33,10 +33,9 @@ swiper-slide img {
     height: 60px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     cursor: pointer;
     transition: 1s ease-in-out;
-
 }
 
 .custom-prev {
@@ -46,8 +45,6 @@ swiper-slide img {
 .custom-next {
     right: -100%;
 }
-
-
 
 .hero-slider:hover .custom-prev {
     left: 0;

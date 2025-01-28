@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
-import { LogosvgComponent } from '../svg/logosvg/logosvg.component';
+import { LogosvgComponent } from '../../app/svg/logosvg/logosvg.component';
 
 @Component({
   selector: 'app-footer',

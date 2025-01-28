@@ -1,11 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { IMockups } from '../imockups';
-import { LogosvgComponent } from '../svg/logosvg/logosvg.component';
-import { ExitsvgComponent } from '../svg/exitsvg/exitsvg.component';
-import { SearchsvgComponent } from '../svg/searchsvg/searchsvg.component';
-import { CartsvgComponent } from '../svg/cartsvg/cartsvg.component';
-import { MenusvgComponent } from '../svg/menusvg/menusvg.component';
-import { UsersvgComponent } from '../svg/usersvg/usersvg.component';
+import { IMockups } from '../../app/imockups';
+import { LogosvgComponent } from '../../app/svg/logosvg/logosvg.component';
+import { ExitsvgComponent } from '../../app/svg/exitsvg/exitsvg.component';
+import { SearchsvgComponent } from '../../app/svg/searchsvg/searchsvg.component';
+import { CartsvgComponent } from '../../app/svg/cartsvg/cartsvg.component';
+import { MenusvgComponent } from '../../app/svg/menusvg/menusvg.component';
+import { UsersvgComponent } from '../../app/svg/usersvg/usersvg.component';
 import { Tooltip } from 'primeng/tooltip';
 import { InputTextModule } from 'primeng/inputtext';
 
