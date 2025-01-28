@@ -1,4 +1,7 @@
-<div class="hero-slider relative h-[75vh] overflow-hidden">
+<div
+  class="hero-slider relative h-[75vh] overflow-hidden"
+  *ngIf="isBrowserOnly"
+>
   <swiper-container
     #swiperContainer
     class="mySwiper"

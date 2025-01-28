@@ -1,4 +1,4 @@
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgIf } from '@angular/common';
 import {
   ChangeDetectorRef,
   Component,
@@ -10,13 +10,11 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
-import { CustombtnComponent } from '../../app/custombtn/custombtn.component';
-import { IHeroslider } from '../../app/iheroslider';
-import { SlashsvgComponent } from '../../app/svg/slashsvg/slashsvg.component';
 import { FabricsvgComponent } from '../../app/svg/fabricsvg/fabricsvg.component';
+import { SlashsvgComponent } from '../../app/svg/slashsvg/slashsvg.component';
 @Component({
   selector: 'app-home',
-  imports: [CustombtnComponent, SlashsvgComponent, FabricsvgComponent],
+  imports: [SlashsvgComponent, FabricsvgComponent, NgIf],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -146,7 +144,6 @@ export class HomeComponent {
   //   },
   // ];
   btnVariant: string = 'btn-trans';
-  btnAnimation: string = 'animate__animated animate__fadeInUp';
   currentIndex = 0;
   ngAfterViewInit(): void {
     const swiper = this.swiperContainer.nativeElement.swiper;
