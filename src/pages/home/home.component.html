@@ -1,13 +1,11 @@
-<div
-  class="hero-slider relative h-[75vh] overflow-hidden"
-  *ngIf="isBrowserOnly"
->
+<div class="hero-slider relative h-[75vh] overflow-hidden">
   <swiper-container
     #swiperContainer
     class="mySwiper"
     loop="true"
     autoplay="true"
     autoplay-delay="5000"
+    *ngIf="isBrowserOnly"
   >
     <swiper-slide class="relative">
       <img
