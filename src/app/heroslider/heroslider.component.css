@@ -19,7 +19,6 @@ swiper-slide img {
     object-fit: cover;
 }
 
-
 .custom-prev,
 .custom-next {
     position: absolute;
@@ -52,4 +51,14 @@ swiper-slide img {
 
 .hero-slider:hover .custom-next {
     right: 0;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

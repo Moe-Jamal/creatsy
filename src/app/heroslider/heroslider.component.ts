@@ -10,17 +10,17 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
-import { FabricsvgComponent } from '../../app/svg/fabricsvg/fabricsvg.component';
-import { SlashsvgComponent } from '../../app/svg/slashsvg/slashsvg.component';
+import { FabricsvgComponent } from '../svg/fabricsvg/fabricsvg.component';
+import { SlashsvgComponent } from '../svg/slashsvg/slashsvg.component';
 @Component({
-  selector: 'app-home',
+  selector: 'app-heroslider',
   imports: [SlashsvgComponent, FabricsvgComponent, NgIf],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  templateUrl: './heroslider.component.html',
+  styleUrl: './heroslider.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent {
+export class HerosliderComponent {
   constructor(
     @Inject(PLATFORM_ID) private platformId: string,
     private cdr: ChangeDetectorRef
@@ -146,7 +146,7 @@ export class HomeComponent {
   btnVariant: string = 'btn-trans';
   currentIndex = 0;
   ngAfterViewInit(): void {
-    const swiper = this.swiperContainer.nativeElement.swiper;
+    const swiper = this.swiperContainer?.nativeElement?.swiper;
     if (this.isBrowserOnly) {
       swiper.on('slideChange', () => {
         this.currentIndex = swiper.realIndex;
@@ -155,14 +155,14 @@ export class HomeComponent {
     }
   }
   slidePrev(): void {
-    if (this.swiperContainer.nativeElement.swiper) {
-      this.swiperContainer.nativeElement.swiper.slidePrev();
+    if (this.swiperContainer?.nativeElement?.swiper) {
+      this.swiperContainer?.nativeElement?.swiper.slidePrev();
     }
   }
 
   slideNext(): void {
-    if (this.swiperContainer.nativeElement.swiper) {
-      this.swiperContainer.nativeElement.swiper.slideNext();
+    if (this.swiperContainer?.nativeElement?.swiper) {
+      this.swiperContainer?.nativeElement?.swiper.slideNext();
     }
   }
 }
