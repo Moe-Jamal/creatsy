@@ -6,12 +6,23 @@ import {
   ElementRef,
   Inject,
   PLATFORM_ID,
+  QueryList,
+  Renderer2,
   ViewChild,
+  viewChildren,
   ViewEncapsulation,
 } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
-import { FabricsvgComponent } from '../svg/fabricsvg/fabricsvg.component';
-import { SlashsvgComponent } from '../svg/slashsvg/slashsvg.component';
+import { FabricsvgComponent } from '../../../../svg/fabricsvg/fabricsvg.component';
+import { SlashsvgComponent } from '../../../../svg/slashsvg/slashsvg.component';
+import {
+  animate,
+  query,
+  stagger,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 @Component({
   selector: 'app-heroslider',
   imports: [SlashsvgComponent, FabricsvgComponent, NgIf],
@@ -23,7 +34,8 @@ import { SlashsvgComponent } from '../svg/slashsvg/slashsvg.component';
 export class HerosliderComponent {
   constructor(
     @Inject(PLATFORM_ID) private platformId: string,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private renderer: Renderer2
   ) {}
   get isBrowserOnly(): boolean {
     return isPlatformBrowser(this.platformId);
@@ -145,15 +157,18 @@ export class HerosliderComponent {
   // ];
   btnVariant: string = 'btn-trans';
   currentIndex = 0;
+
   ngAfterViewInit(): void {
     const swiper = this.swiperContainer?.nativeElement?.swiper;
     if (this.isBrowserOnly) {
       swiper.on('slideChange', () => {
         this.currentIndex = swiper.realIndex;
+        console.log(this.currentIndex);
         this.cdr.detectChanges();
       });
     }
   }
+
   slidePrev(): void {
     if (this.swiperContainer?.nativeElement?.swiper) {
       this.swiperContainer?.nativeElement?.swiper.slidePrev();
