@@ -1,0 +1,27 @@
+.slider-navigation {
+    transition: opacity 0.3s ease-in-out;
+    will-change: opacity;
+}
+
+.slider-navigation button {
+    will-change: transform, background-color;
+}
+
+/* Smooth image transitions */
+img {
+    will-change: opacity;
+}
+
+.image-scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.image-scroll-container::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Smooth scrolling behavior */
+.image-scroll-container {
+    scroll-behavior: smooth;
+}
