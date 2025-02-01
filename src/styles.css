@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
     --p-tooltip-background: #191919 !important;
 }

@@ -18,6 +18,7 @@ module.exports = {
       colors: {
         "main-color": "#191919",
         "secondry-color": "#A3D14A",
+        "hr-color": "#dedede",
       },
       screens: {
         "lg-xl": "1150px",

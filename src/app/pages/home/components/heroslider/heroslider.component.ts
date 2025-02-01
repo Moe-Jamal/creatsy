@@ -6,30 +6,19 @@ import {
   ElementRef,
   Inject,
   PLATFORM_ID,
-  QueryList,
   Renderer2,
   ViewChild,
-  viewChildren,
   ViewEncapsulation,
 } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
 import { FabricsvgComponent } from '../../../../svg/fabricsvg/fabricsvg.component';
 import { SlashsvgComponent } from '../../../../svg/slashsvg/slashsvg.component';
-import {
-  animate,
-  query,
-  stagger,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 @Component({
   selector: 'app-heroslider',
   imports: [SlashsvgComponent, FabricsvgComponent, NgIf],
   templateUrl: './heroslider.component.html',
   styleUrl: './heroslider.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  encapsulation: ViewEncapsulation.None,
 })
 export class HerosliderComponent {
   constructor(

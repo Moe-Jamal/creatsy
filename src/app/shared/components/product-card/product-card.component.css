@@ -18,10 +18,14 @@ img {
 }
 
 .image-scroll-container::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
 
 /* Smooth scrolling behavior */
 .image-scroll-container {
     scroll-behavior: smooth;
+}
+
+.main-card:hover {
+    box-shadow: 10px 10px 20px 5px #d9d9d9;
 }

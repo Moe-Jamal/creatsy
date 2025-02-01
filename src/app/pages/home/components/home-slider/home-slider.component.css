@@ -1,0 +1,24 @@
+.custom-nav {
+    position: absolute;
+    top: 58%;
+    left: 15px;
+    right: 15px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.custom-prev {
+    pointer-events: all;
+    color: #444;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.custom-next {
+    pointer-events: all;
+    color: #444;
+    padding: 10px;
+    cursor: pointer;
+}

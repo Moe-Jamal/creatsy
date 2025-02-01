@@ -1,10 +1,18 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+  HostListener,
+  Input,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartsvgComponent } from '../../../svg/cartsvg/cartsvg.component';
 import { HeartsvgComponent } from '../../../svg/heartsvg/heartsvg.component';
 import { CompareSvgComponent } from '../../../svg/comparesvg/comparesvg.component';
 import { LeftArrowSvgComponent } from '../../../svg/leftarrowsvg/leftarrowsvg.component';
 import { RightArrowSvgComponent } from '../../../svg/rightarrowsvg/rightarrowsvg.component';
+import { DownloadSvgComponent } from '../../../svg/download-svg/download-svg.component';
 
 @Component({
   selector: 'app-product-card',
@@ -15,6 +23,7 @@ import { RightArrowSvgComponent } from '../../../svg/rightarrowsvg/rightarrowsvg
     CompareSvgComponent,
     LeftArrowSvgComponent,
     RightArrowSvgComponent,
+    DownloadSvgComponent,
   ],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.css',
@@ -22,6 +31,7 @@ import { RightArrowSvgComponent } from '../../../svg/rightarrowsvg/rightarrowsvg
 })
 export class ProductCardComponent implements AfterViewInit {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef<HTMLElement>;
+  @Input() isFree: boolean = false;
   currentImageIndex = 0;
 
   images: string[] = [
@@ -31,13 +41,17 @@ export class ProductCardComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit() {
-    this.scrollContainer.nativeElement.addEventListener('scroll', () => {
-      const scrollLeft = this.scrollContainer.nativeElement.scrollLeft;
-      const itemWidth = this.scrollContainer.nativeElement.clientWidth;
-      this.currentImageIndex = Math.round(scrollLeft / itemWidth);
-    });
+    this.scrollContainer.nativeElement.addEventListener(
+      'scroll',
+      this.onScroll
+    );
   }
 
+  onScroll = () => {
+    const scrollLeft = this.scrollContainer.nativeElement.scrollLeft;
+    const itemWidth = this.scrollContainer.nativeElement.clientWidth;
+    this.currentImageIndex = Math.round(scrollLeft / itemWidth);
+  };
   scrollNext() {
     const container = this.scrollContainer.nativeElement;
     const itemWidth = container.clientWidth;
@@ -61,5 +75,12 @@ export class ProductCardComponent implements AfterViewInit {
     } else {
       container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
     }
+  }
+
+  ngOnDestroy(): void {
+    this.scrollContainer.nativeElement.removeEventListener(
+      'scroll',
+      this.onScroll
+    );
   }
 }

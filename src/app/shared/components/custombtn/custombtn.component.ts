@@ -9,6 +9,4 @@ import { Component, Input } from '@angular/core';
 export class CustombtnComponent {
   @Input() btnType: string = 'btn-black';
   @Input() btnLeft: boolean = false;
-  @Input() btnBorderColor: string = '#dedede33';
-  @Input() btnAnimation: string = '';
 }

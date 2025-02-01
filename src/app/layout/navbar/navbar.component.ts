@@ -1,13 +1,13 @@
-import { IMockups } from './../../imockups';
-import { UsersvgComponent } from './../../svg/usersvg/usersvg.component';
-import { MenusvgComponent } from './../../svg/menusvg/menusvg.component';
+import { IMockups } from './../../shared/interfaces/imockups';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { InputTextModule } from 'primeng/inputtext';
+import { Tooltip } from 'primeng/tooltip';
 import { CartsvgComponent } from './../../svg/cartsvg/cartsvg.component';
-import { SearchsvgComponent } from './../../svg/searchsvg/searchsvg.component';
 import { ExitsvgComponent } from './../../svg/exitsvg/exitsvg.component';
 import { LogosvgComponent } from './../../svg/logosvg/logosvg.component';
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Tooltip } from 'primeng/tooltip';
-import { InputTextModule } from 'primeng/inputtext';
+import { MenusvgComponent } from './../../svg/menusvg/menusvg.component';
+import { SearchsvgComponent } from './../../svg/searchsvg/searchsvg.component';
+import { UsersvgComponent } from './../../svg/usersvg/usersvg.component';
 
 @Component({
   selector: 'app-navbar',

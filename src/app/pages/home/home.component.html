@@ -1,1 +1,153 @@
 <app-heroslider></app-heroslider>
+<section class="new-mockups py-sec-p border-b border-hr-color">
+  <div class="container max-w-full relative">
+    <div
+      class="flex justify-between items-center px-[14px] flex-col sm:flex-row mb-3 gap-y-3"
+    >
+      <div class="">
+        <h2 class="text-[1.875rem] lg-xl:text-[3.75rem] font-semibold">
+          New mockups
+        </h2>
+      </div>
+      <div class="selection text-[1.125rem]">
+        <button (click)="premiumMokups()" [class]="{ 'font-bold': !isFree }">
+          Premium
+        </button>
+        <span class="font-bold px-3"> — </span>
+        <button (click)="freeMokups()" [class]="{ 'font-bold': isFree }">
+          Free
+        </button>
+      </div>
+    </div>
+    @if (!isFree) {
+    <app-home-slider></app-home-slider>
+    } @else {
+    <app-home-slider [slides]="[1, 2, 3]" [sliderFree]="true"></app-home-slider>
+    }
+  </div>
+  @if (!isFree) {
+  <app-custombtn> Shop Now </app-custombtn>
+
+  } @else {
+  <app-custombtn> Browse </app-custombtn>
+  }
+</section>
+
+<section class="new-3d-mockups py-sec-p border-b border-hr-color">
+  <div class="container max-w-full relative">
+    <div class="px-[14px]">
+      <h2 class="text-[1.875rem] lg-xl:text-[3.75rem] font-semibold mb-3">
+        New 3D models
+      </h2>
+    </div>
+    <app-home-slider></app-home-slider>
+  </div>
+  <app-custombtn> Shop Now </app-custombtn>
+</section>
+<section class="creator py-sec-p overflow-hidden">
+  <div
+    class="container text-center font-semibold text-[28px] 2xl:text-[90px] lg-xl:text-[60px] md:text-[50px]"
+  >
+    <h2
+      class="sm:-translate-x-[50px] md:-translate-x-[110px] lg-xl:-translate-x-[160px] 2xl:-translate-x-[205px] md:-mb-4 leading-none"
+    >
+      We bring the creator's
+    </h2>
+    <h2
+      class="sm:translate-x-[50px] md:translate-x-[110px] lg-xl:translate-x-[160px] 2xl:translate-x-[205px]"
+    >
+      vision to life.
+    </h2>
+  </div>
+</section>
+<section class="creator-content bg-main-color text-white">
+  <div
+    class="container max-w-full relative flex justify-center flex-col lg:flex-row"
+  >
+    <div
+      class="max-w-[550px] lg-xl:[20px] 2xl:text-[25px] pt-14 m-auto lg:pt-0 lg:ms-16 lg:absolute lg:right-[70%] lg:top-[60px] z-10"
+    >
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The combination of pictures
+        and digital renderings allows us to create the extremely realistic PSD
+        mockups we are known for worldwide
+        <a href="#" class="ms-2"
+          ><i class="fa-solid fa-arrow-right-long"></i
+        ></a>
+      </p>
+    </div>
+    <div class="img-holder max-w-[1500px] w-full flex justify-center">
+      <img src="./open-box.webp" alt="" class="w-full lg:scale-[80%]" />
+    </div>
+    <div
+      class="bottom-left max-w-[500px] lg:max-w-[320px] m-auto lg:absolute lg:bottom-[20%] lg:right-[70%] text-center lg:text-end lg:ms-4"
+    >
+      <img
+        src="https://creatsy.com/assets/modules/home/creators-visions/color-circle.png"
+        class="mx-auto lg:ms-auto lg:mx-0"
+        alt=""
+      />
+      <h3
+        class="text-[30px] relative my-4 m-auto lg:ms-0 after:h-[1px] 2xl:after:w-[7.5vw] after:hidden lg:after:block after:w-[7vw] after:bg-gray-500 after:absolute after:left-[calc(100%+15px)] after:top-[54%]"
+      >
+        Vibrant Colors
+      </h3>
+      <p class="text-gray-400">
+        We provide unique overlay layers for various textures and finishes that
+        add realistic detail without causing a loss of contrast or saturation
+        when applied to your designs.
+      </p>
+    </div>
+    <div
+      class="bottom-right text-center lg:text-start max-w-[500px] lg:max-w-[320px] m-auto lg:absolute lg:top-[25%] xl:top-[30%] lg:left-[70%] my-14"
+    >
+      <app-wave-svg></app-wave-svg>
+      <h3
+        class="text-[25px] relative my-4 m-auto lg:ms-0 after:h-[1px] after:hidden lg:after:block after:w-[5vw] 2xl:after:w-[5.5vw] after:bg-gray-500 after:absolute after:right-[calc(100%+15px)] after:top-[54%]"
+      >
+        Perfectly warped. Always.
+      </h3>
+      <p class="text-gray-400">
+        We use as many tools and techniques as possible with our smart object
+        layers to ensure our product mockups are as realistic as they can be.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="py-sec-p">
+  <div class="container max-w-full">
+    <div class="blog grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div class="img-holder h-[260px] sm:h-[350px] lg:h-[384px] 2xl:h-[579px]">
+        <img
+          [src]="imgSrc"
+          [alt]="imgAlt"
+          class="w-full h-full object-contain"
+        />
+      </div>
+      <div class="blog-links">
+        <ul>
+          @for (blog of blogs; track blog.id) {
+          <a href="#" (mouseover)="changeBlogImg($index)">
+            <li class="border-b border-hr-color mb-4 group">
+              <span class="text-xs uppercase">{{ blog.date }}</span>
+              <div
+                class="blog-title flex justify-between items-center pb-8 md:pb-6 lg:pb-8 2xl:pb-12"
+              >
+                <h3
+                  class="text-[24px] md:text-[1.1875rem] lg:text-[1.75rem] xl:text-[2.5rem] 2xl:text-[3rem] font-semibold leading-none"
+                >
+                  {{ blog.title }}
+                </h3>
+                <i
+                  class="fa-solid fa-chevron-right text-3xl lg:text-4xl 2xl:text-5xl invisible group-hover:visible"
+                ></i>
+              </div>
+            </li>
+          </a>
+          }
+        </ul>
+      </div>
+    </div>
+    <app-custombtn>More From blog</app-custombtn>
+  </div>
+</section>

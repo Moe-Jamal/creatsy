@@ -1,88 +1,111 @@
-<div
-  class="max-w-[510.33px] border-[#ddd] border-[1px] overflow-hidden relative group"
->
-  <!-- Actions Container Start -->
-  <div
-    class="absolute z-10 top-0 -end-32 group-hover:end-0 justify-between text-white w-32 bg-main-color/70 flex transition-all duration-300"
-  >
-    <button
-      class="grid place-content-center p-3 border-e-[1px] border-opacity-20 border-white"
-    >
-      <app-comparesvg class="w-4 h-4"></app-comparesvg>
-    </button>
-    <button class="flex items-center justify-center gap-[0.5rem] flex-1">
-      <app-heartsvg class="w-4 h-4"></app-heartsvg>
-      <span class="mb-1 text-sm"> 1 </span>
-    </button>
-  </div>
-  <!-- Actions Container End -->
-
-  <!-- Image Container Start -->
-  <div class="aspect-[1.5] bg-gray-100 relative">
-    <!-- Scroll Container Start -->
+<div class="my-8 mx-4 main-card transition-all duration-500">
+  <div class="border-[#ddd] border-[1px] overflow-hidden relative group">
+    <!-- Actions Container Start -->
     <div
-      #scrollContainer
-      class="image-scroll-container w-full h-full overflow-x-auto flex snap-x snap-mandatory scrollbar-none"
+      class="absolute z-10 top-0 -end-32 group-hover:end-0 justify-between text-white bg-main-color/70 flex transition-all duration-300"
+      [class]="isFree ? 'w-20' : 'w-32'"
     >
-      <img
-        *ngFor="let image of images; let i = index"
-        [src]="image"
-        [alt]="'Product image ' + (i + 1)"
-        class="w-full h-full object-cover flex-none snap-center"
-      />
-    </div>
-    <!-- Scroll Container End -->
-
-    <!-- Navigation Buttons Start -->
-    <div class="absolute top-1/2 -translate-y-1/2 w-full pointer-events-none">
-      <div class="flex justify-between">
-        <button
-          (click)="scrollPrev()"
-          class="h-[79px] bg-white/20 text-black/40 text-sm w-[29px] pointer-events-auto flex justify-center items-center transition-all duration-300 hover:bg-white/70 -translate-x-full group-hover:translate-x-0"
-        >
-          <app-leftarrowsvg class="w-4 h-4"></app-leftarrowsvg>
-        </button>
-
-        <button
-          (click)="scrollNext()"
-          class="h-[79px] bg-white/20 text-black/40 text-sm w-[29px] pointer-events-auto flex justify-center items-center transition-all duration-300 hover:bg-white/70 translate-x-full group-hover:translate-x-0"
-        >
-          <app-rightarrowsvg class="w-4 h-4"></app-rightarrowsvg>
-        </button>
-      </div>
-    </div>
-    <!-- Navigation Buttons End -->
-  </div>
-  <!-- Image Container End -->
-
-  <!-- Details Container Start -->
-  <div class="flex items-stretch justify-between">
-    <div class="min-w-0 p-4">
-      <h3 class="truncate text-[1rem] font-bold w-full pb-1">
-        Bella Canvas 3001 T-shirt Mockup Set - Winter Edition
-      </h3>
-      <p class="text-xs">
-        <span> in: </span>
-        <span class="font-bold truncate w-full"> Mockups </span>
-        <span> / </span>
-        <span class="truncate w-full"> T-shirts </span>
-      </p>
-    </div>
-    <div
-      class="relative flex-shrink-0 border-[#ddd] border-s-[1px] ps-4 flex items-center pe-4"
-    >
-      <p>
-        <sup class="text-[.857rem] -me-1">$</sup>
-        <span class="text-[1.6rem]"> 24 </span>
-        <sup class="text-[.857rem] -ms-1"> 00 </sup>
-      </p>
-
+      @if (!isFree) {
       <button
-        class="absolute start-full w-full h-full bg-main-color text-white grid place-content-center group-hover:start-0 transition-all duration-300"
+        class="grid place-content-center p-3 border-e-[1px] border-opacity-20 border-white"
       >
-        <app-cartsvg></app-cartsvg>
+        <app-comparesvg class="w-4 h-4"></app-comparesvg>
+      </button>
+      }
+      <button class="flex items-center p-2 justify-center gap-[0.5rem] flex-1">
+        <app-heartsvg class="w-4 h-4"></app-heartsvg>
+        <span class="mb-1 text-sm"> 1 </span>
       </button>
     </div>
+    <!-- Actions Container End -->
+
+    <!-- Image Container Start -->
+    <div class="aspect-[1.5] bg-gray-100 relative">
+      <!-- Scroll Container Start -->
+      <div
+        #scrollContainer
+        class="image-scroll-container w-full h-full overflow-x-auto flex snap-x snap-mandatory scrollbar-none"
+      >
+        @for (image of images; track $index; let i = $index) {
+        <img
+          [src]="image"
+          [alt]="'Product image' + (i + 1)"
+          class="w-full h-full object-cover flex-none snap-center"
+        />
+        }
+      </div>
+      <!-- Scroll Container End -->
+
+      <!-- Navigation Buttons Start -->
+      <div class="absolute top-1/2 -translate-y-1/2 w-full pointer-events-none">
+        <div class="flex justify-between">
+          <button
+            (click)="scrollPrev()"
+            class="h-[79px] bg-white/20 text-black/40 text-sm w-[29px] pointer-events-auto flex justify-center items-center transition-all duration-300 hover:bg-white/70 -translate-x-full group-hover:translate-x-0"
+          >
+            <app-leftarrowsvg class="w-4 h-4"></app-leftarrowsvg>
+          </button>
+
+          <button
+            (click)="scrollNext()"
+            class="h-[79px] bg-white/20 text-black/40 text-sm w-[29px] pointer-events-auto flex justify-center items-center transition-all duration-300 hover:bg-white/70 translate-x-full group-hover:translate-x-0"
+          >
+            <app-rightarrowsvg class="w-4 h-4"></app-rightarrowsvg>
+          </button>
+        </div>
+      </div>
+      <!-- Navigation Buttons End -->
+    </div>
+    <!-- Image Container End -->
+
+    <!-- Details Container Start -->
+    <div class="flex items-stretch justify-between">
+      <div class="min-w-0 p-4">
+        <h3 class="truncate text-[1rem] font-bold w-full pb-1">
+          Bella Canvas 3001 T-shirt Mockup Set - Winter Edition
+        </h3>
+        <p class="text-xs">
+          <span> in: </span>
+          <span class="font-bold truncate w-full"> Mockups </span>
+          <span> / </span>
+          <span class="truncate w-full"> T-shirts </span>
+        </p>
+      </div>
+
+      @if (isFree) {
+      <div
+        class="relative flex-shrink-0 border-[#ddd] border-s-[1px] px-7 flex items-center"
+      >
+        <p>
+          <app-download-svg></app-download-svg>
+        </p>
+
+        <button
+          class="absolute start-full w-full h-full bg-main-color text-white grid place-content-center group-hover:start-0 transition-all duration-300"
+        >
+          <app-download-svg [svgColor]="'fill-white'"></app-download-svg>
+        </button>
+      </div>
+
+      } @else {
+      <div
+        class="relative flex-shrink-0 border-[#ddd] border-s-[1px] ps-4 flex items-center pe-4"
+      >
+        <p>
+          <sup class="text-[.857rem] -me-1">$</sup>
+          <span class="text-[1.6rem]"> 24 </span>
+          <sup class="text-[.857rem] -ms-1"> 00 </sup>
+        </p>
+
+        <button
+          class="absolute start-full w-full h-full bg-main-color text-white grid place-content-center group-hover:start-0 transition-all duration-300"
+        >
+          <app-cartsvg></app-cartsvg>
+        </button>
+      </div>
+
+      }
+    </div>
+    <!-- Details Container End -->
   </div>
-  <!-- Details Container End -->
 </div>

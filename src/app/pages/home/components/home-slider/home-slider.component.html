@@ -1,0 +1,15 @@
+<owl-carousel-o [options]="customOptions" #owlCarousel>
+  @for (item of slides; track $index) {
+  <ng-template carouselSlide class="p-5"
+    ><app-product-card [isFree]="sliderFree"></app-product-card
+  ></ng-template>
+  }
+</owl-carousel-o>
+<div class="custom-nav hidden md:flex">
+  <button class="custom-prev" (click)="prev()">
+    <i class="fa-solid fa-chevron-left text-4xl"></i>
+  </button>
+  <button class="custom-next" (click)="next()">
+    <i class="fa-solid fa-chevron-right text-4xl next"></i>
+  </button>
+</div>
