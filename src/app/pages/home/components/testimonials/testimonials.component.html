@@ -1,0 +1,19 @@
+<div class="container text-center lg:px-20 relative">
+  <app-thank-you-svg></app-thank-you-svg>
+  <div class="review relative mt-5 lg:mt-10 h-[150px]">
+    @for (testo of testimonials; track $index) {
+    <div
+      class="testo absolute w-full transition-opacity duration-1000 ease-in-out"
+      [class]="{
+        'opacity-100': $index === activeIndex,
+        'opacity-0': $index !== activeIndex
+      }"
+    >
+      <div class="leading-normal lg:leading-9 lg:text-[1.875rem] mb-4 lg:mb-6">
+        “{{ testo.text }}“
+      </div>
+      <p class="text-[15px]">{{ testo.designer }}</p>
+    </div>
+    }
+  </div>
+</div>

@@ -1,4 +1,5 @@
 <app-heroslider></app-heroslider>
+<!-- new mockups slider  -->
 <section class="new-mockups py-sec-p border-b border-hr-color">
   <div class="container max-w-full relative">
     <div
@@ -32,7 +33,7 @@
   <app-custombtn> Browse </app-custombtn>
   }
 </section>
-
+<!-- new 3d-mockups slider  -->
 <section class="new-3d-mockups py-sec-p border-b border-hr-color">
   <div class="container max-w-full relative">
     <div class="px-[14px]">
@@ -44,22 +45,16 @@
   </div>
   <app-custombtn> Shop Now </app-custombtn>
 </section>
+<!-- creator section  -->
 <section class="creator py-sec-p overflow-hidden">
-  <div
-    class="container text-center font-semibold text-[28px] 2xl:text-[90px] lg-xl:text-[60px] md:text-[50px]"
-  >
-    <h2
-      class="sm:-translate-x-[50px] md:-translate-x-[110px] lg-xl:-translate-x-[160px] 2xl:-translate-x-[205px] md:-mb-4 leading-none"
-    >
-      We bring the creator's
-    </h2>
-    <h2
-      class="sm:translate-x-[50px] md:translate-x-[110px] lg-xl:translate-x-[160px] 2xl:translate-x-[205px]"
-    >
-      vision to life.
-    </h2>
+  <div class="contianer max-w-full">
+    <app-main-title>
+      <span class="left">We bring the creator's</span>
+      <span class="right">vision to life.</span>
+    </app-main-title>
   </div>
 </section>
+<!-- creator-content section  -->
 <section class="creator-content bg-main-color text-white">
   <div
     class="container max-w-full relative flex justify-center flex-col lg:flex-row"
@@ -114,6 +109,7 @@
     </div>
   </div>
 </section>
+<!-- blog section  -->
 <section class="py-sec-p">
   <div class="container max-w-full">
     <div class="blog grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -150,4 +146,117 @@
     </div>
     <app-custombtn>More From blog</app-custombtn>
   </div>
+</section>
+<!-- studio section -->
+<section>
+  <div
+    class="background-img relative min-h-[50vh] md:min-h-[75vh] lg:min-h-screen"
+  >
+    <div class="hidden" aria-hidden="true">
+      <img
+        src="https://creatsy.com/assets/modules/home/studio-photos/1/studio-1-md.webp"
+      />
+      <img
+        src="https://creatsy.com/assets/modules/home/studio-photos/2/studio-2-md.webp"
+      />
+      <img
+        src="https://creatsy.com/assets/modules/home/studio-photos/3/studio-3-md.webp"
+      />
+      <img
+        src="https://creatsy.com/assets/modules/home/studio-photos/4/studio-4-md.webp"
+      />
+      <img
+        src="https://creatsy.com/assets/modules/home/studio-photos/5/studio-5-md.webp"
+      />
+      <img
+        src="https://creatsy.com/assets/modules/home/studio-photos/6/studio-6-md.webp"
+      />
+      <img
+        src="https://creatsy.com/assets/modules/home/studio-photos/7/studio-7-md.webp"
+      />
+      <img
+        src="https://creatsy.com/assets/modules/home/studio-photos/8/studio-8-md.webp"
+      />
+    </div>
+    <div
+      class="overlay bg-[#00000099] absolute w-full bottom-0 h-1/2 md:w-1/2 md:top-0 md:h-full flex justify-center items-center z-10"
+    >
+      <p class="text-[15px] lg-xl:text-[26px] text-white font-light">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How we do it? We use
+        professional <br />
+        photography equipment and 3D software <br />
+        to create digitally rendered, high-quality <br />
+        product mockups.<a href="#" class="ms-2"
+          ><i class="fa-solid fa-arrow-right-long"></i
+        ></a>
+      </p>
+    </div>
+  </div>
+</section>
+<!-- about-us section  -->
+<section class="py-sec-p overflow-hidden">
+  <div class="container max-w-full">
+    <app-main-title>
+      <span class="left">If you can dream it,</span>
+      <span class="right">we can make it.</span>
+    </app-main-title>
+    <div class="text-center">
+      <p
+        class="max-w-[880px] lg-xl:max-w-[1100px] mx-auto leading-8 font-light font-sans lg:text-[18px]"
+      >
+        <span class="font-normal text-[18px] lg:text-[23px]"
+          >We pride ourselves on our unique structure.</span
+        >
+        We are an independently owned design studio, producing our own mockups
+        and responding to each inquiry personally. We have an portfolio of
+        thousands of mockups from all industries. Our committed team of
+        passionate people craft genuine work for clients, ranging from startup
+        companies to well-known brands, throughout the world. Our work includes
+        product mock-ups, photography, 3D modeling and software development.
+      </p>
+    </div>
+    <app-custombtn>About</app-custombtn>
+  </div>
+</section>
+<!-- categories section  -->
+<section class="categories">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    @for (cate of categories; track $index) {
+    <div
+      class="cate group relative overflow-hidden"
+      [class]="{
+        'md:hidden': $last,
+        'lg:hidden': $index === categories.length - 2
+      }"
+    >
+      <a href="#">
+        <img
+          [src]="cate.imgSrc"
+          [alt]="cate.name"
+          class="w-full h-full object-cover"
+        />
+        <img
+          class="hover-img w-full h-full object-cover opacity-0 absolute top-0 left-0 transition-opacity ease-in duration-300 group-hover:opacity-100"
+          [src]="cate.hoverImgSrc"
+          [alt]="cate.name"
+        />
+      </a>
+      <div
+        class="cate-name absolute text-center right-0 bottom-0 w-full sm:w-auto translate-x-[110%] transition-transform duration-300 ease-in-out group-hover:translate-x-0 p-4 sm:px-10 sm:py-6 bg-main-color text-white z-20"
+      >
+        <span class="uppercase text-sm md:text-base">{{ cate.name }}</span>
+      </div>
+    </div>
+    }
+    <div class="bg-main-color grid place-items-center">
+      <a href="#" class="uppercase text-white">
+        All categories
+        <i class="fa-solid fa-arrow-right-long ms-1"></i>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- testimonials section -->
+<section class="testimonial py-sec-p">
+  <app-testimonials></app-testimonials>
 </section>

@@ -6,9 +6,7 @@ import {
   ElementRef,
   Inject,
   PLATFORM_ID,
-  Renderer2,
   ViewChild,
-  ViewEncapsulation,
 } from '@angular/core';
 import { SwiperContainer } from 'swiper/element';
 import { FabricsvgComponent } from '../../../../svg/fabricsvg/fabricsvg.component';
@@ -23,8 +21,7 @@ import { SlashsvgComponent } from '../../../../svg/slashsvg/slashsvg.component';
 export class HerosliderComponent {
   constructor(
     @Inject(PLATFORM_ID) private platformId: string,
-    private cdr: ChangeDetectorRef,
-    private renderer: Renderer2
+    private cdr: ChangeDetectorRef
   ) {}
   get isBrowserOnly(): boolean {
     return isPlatformBrowser(this.platformId);

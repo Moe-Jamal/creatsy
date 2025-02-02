@@ -1,8 +1,15 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import {
+  Component,
+  Inject,
+  Input,
+  PLATFORM_ID,
+  ViewChild,
+} from '@angular/core';
 import { ProductCardComponent } from '../../../../shared/components/product-card/product-card.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { CarouselComponent } from 'ngx-owl-carousel-o';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home-slider',
@@ -11,6 +18,10 @@ import { CarouselComponent } from 'ngx-owl-carousel-o';
   styleUrl: './home-slider.component.css',
 })
 export class HomeSliderComponent {
+  constructor(@Inject(PLATFORM_ID) private platformId: string) {}
+  get browserOnly() {
+    return isPlatformBrowser(this.platformId);
+  }
   @ViewChild('owlCarousel') owlCarousel!: CarouselComponent;
   @Input() slides: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
   @Input() sliderFree: boolean = false;

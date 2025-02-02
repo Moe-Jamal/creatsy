@@ -1,3 +1,4 @@
+@if (browserOnly) {
 <owl-carousel-o [options]="customOptions" #owlCarousel>
   @for (item of slides; track $index) {
   <ng-template carouselSlide class="p-5"
@@ -13,3 +14,4 @@
     <i class="fa-solid fa-chevron-right text-4xl next"></i>
   </button>
 </div>
+}

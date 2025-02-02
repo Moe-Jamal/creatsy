@@ -1,0 +1,44 @@
+.background-img {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: changeBackground 16s infinite;
+}
+
+@keyframes changeBackground {
+    0% {
+        background-image: url("https://creatsy.com/assets/modules/home/studio-photos/1/studio-1-md.webp");
+    }
+
+    12.5% {
+        background-image: url("https://creatsy.com/assets/modules/home/studio-photos/2/studio-2-md.webp");
+    }
+
+    25% {
+        background-image: url("https://creatsy.com/assets/modules/home/studio-photos/3/studio-3-md.webp");
+    }
+
+    37.5% {
+        background-image: url("https://creatsy.com/assets/modules/home/studio-photos/4/studio-4-md.webp");
+    }
+
+    50% {
+        background-image: url("https://creatsy.com/assets/modules/home/studio-photos/5/studio-5-md.webp");
+    }
+
+    62.5% {
+        background-image: url("https://creatsy.com/assets/modules/home/studio-photos/6/studio-6-md.webp");
+    }
+
+    75% {
+        background-image: url("https://creatsy.com/assets/modules/home/studio-photos/7/studio-7-md.webp");
+    }
+
+    87.5% {
+        background-image: url("https://creatsy.com/assets/modules/home/studio-photos/8/studio-8-md.webp");
+    }
+
+    100% {
+        background-image: url("https://creatsy.com/assets/modules/home/studio-photos/1/studio-1-md.webp");
+    }
+}
