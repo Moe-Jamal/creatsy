@@ -42,7 +42,7 @@ export class FooterComponent {
 
   isDesktop: boolean = true;
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.cheackScreenSize();
   }
   cheackScreenSize() {
