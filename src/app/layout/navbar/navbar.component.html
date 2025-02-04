@@ -2,7 +2,7 @@
   <nav class="navbar flex h-[55px] lg-xl:h-[85px] bg-white">
     <!-- =========================== Website Logo ===========================  -->
     <div class="logo w-[70px] md:w-[100px] lg-xl:w-[250px] bg-main-color">
-      <a href="" class="h-full flex justify-center items-center p-4">
+      <a routerLink="/home" class="h-full flex justify-center items-center p-4">
         <app-logosvg
           [logoColor]="brandColor"
           [logoSize]="brandSize"
@@ -37,12 +37,12 @@
               (mouseleave)="$index === 1 && closeDesktopMenu()"
             >
               <a
-                href=""
+                [routerLink]="link.path"
                 [class]="{
                 'font-bold': last,
               }"
               >
-                {{ link }}
+                {{ link.name }}
               </a>
             </li>
             }
@@ -109,9 +109,13 @@
     </div>
     <!-- =========================== Cart button ===========================  -->
     <div
-      class="cart w-[60px] lg-xl:w-[85px] bg-secondry-color h-full flex justify-center items-center border-b-[1px] border-l-[1px] border-[#ddd] cursor-pointer"
+      class="cart w-[60px] lg-xl:w-[85px] bg-secondry-color h-full border-b-[1px] border-l-[1px] border-[#ddd] cursor-pointer"
     >
-      <app-cartsvg></app-cartsvg>
+      <a
+        routerLink="/cart"
+        class="w-full h-full flex justify-center items-center"
+        ><app-cartsvg></app-cartsvg
+      ></a>
     </div>
   </nav>
   <!-- =========================== Desktop submenu =========================== -->
@@ -218,7 +222,7 @@
       >
         @for (link of mobileLinks; track $index) {
         <li class="font-bold uppercase mb-5">
-          <a href="">{{ link }}</a>
+          <a [routerLink]="link.path">{{ link.name }}</a>
         </li>
         }
       </ul>

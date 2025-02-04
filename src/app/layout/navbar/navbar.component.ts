@@ -8,6 +8,8 @@ import { LogosvgComponent } from './../../svg/logosvg/logosvg.component';
 import { MenusvgComponent } from './../../svg/menusvg/menusvg.component';
 import { SearchsvgComponent } from './../../svg/searchsvg/searchsvg.component';
 import { UsersvgComponent } from './../../svg/usersvg/usersvg.component';
+import { RouterLink } from '@angular/router';
+import { Ilink } from '../../shared/interfaces/ilink';
 
 @Component({
   selector: 'app-navbar',
@@ -20,28 +22,29 @@ import { UsersvgComponent } from './../../svg/usersvg/usersvg.component';
     UsersvgComponent,
     Tooltip,
     InputTextModule,
+    RouterLink,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
   @ViewChild('searchInput') searchInput!: ElementRef;
-  desktopLinks: string[] = [
-    'About',
-    'Mockups',
-    '3D',
-    'Freebies',
-    'Made with Creatsy',
-    'Register / Login',
+  desktopLinks: Ilink[] = [
+    { name: 'About', path: '/about' },
+    { name: 'Mockups', path: '/mockups' },
+    { name: '3D', path: '/three-d-models' },
+    { name: 'Freebies', path: 'freebies' },
+    { name: 'Made with Creatsy', path: '/made-with-creatsy' },
+    { name: 'Register / Login' },
   ];
 
-  mobileLinks: string[] = [
-    'About',
-    'Shop',
-    '3D Models',
-    'Blog',
-    'Freebies',
-    'Made With Creatsy',
+  mobileLinks: Ilink[] = [
+    { name: 'About', path: '/about' },
+    { name: 'Shop', path: '/mockups' },
+    { name: '3D Models', path: '/three-d-models' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Freebies', path: 'freebies' },
+    { name: 'Made with Creatsy', path: '/made-with-creatsy' },
   ];
 
   categoriesList: string[] = [

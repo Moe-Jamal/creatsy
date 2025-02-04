@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import {
   Component,
   Inject,
@@ -18,7 +19,26 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './home-slider.component.css',
 })
 export class HomeSliderComponent {
-  constructor(@Inject(PLATFORM_ID) private platformId: string) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: string,
+    private breakpointObserver: BreakpointObserver
+  ) {
+    if (this.browserOnly) {
+      this.breakpointObserver
+        .observe([Breakpoints.Handset])
+        .subscribe((result) => {
+          if (result.matches) {
+            this.customOptions = {
+              ...this.customOptions,
+              stagePadding: 20,
+              autoplay: false,
+            };
+          } else {
+            this.customOptions = { ...this.customOptions, stagePadding: 0 };
+          }
+        });
+    }
+  }
   get browserOnly() {
     return isPlatformBrowser(this.platformId);
   }
@@ -42,7 +62,7 @@ export class HomeSliderComponent {
       0: {
         items: 1,
       },
-      720: {
+      555: {
         items: 2,
       },
       976: {

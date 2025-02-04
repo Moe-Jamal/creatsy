@@ -3,7 +3,6 @@ import {
   ViewChild,
   ElementRef,
   AfterViewInit,
-  HostListener,
   Input,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
