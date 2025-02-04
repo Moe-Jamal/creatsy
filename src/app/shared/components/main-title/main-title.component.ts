@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { GaspAnimationDirective } from '../../directives/gasp-animation.directive';
 
 @Component({
   selector: 'app-main-title',
-  imports: [],
+  imports: [GaspAnimationDirective],
   templateUrl: './main-title.component.html',
-  styleUrl: './main-title.component.css'
+  styleUrl: './main-title.component.css',
 })
-export class MainTitleComponent {
-
-}
+export class MainTitleComponent {}

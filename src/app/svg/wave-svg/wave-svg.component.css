@@ -1,0 +1,17 @@
+#wave3 {
+    stroke-dasharray: 0 0 101 0;
+    stroke-dashoffset: 10px;
+    animation: wave 2s ease-out 1;
+}
+
+@keyframes wave {
+    0% {
+        stroke-dashoffset: 0;
+        transform: translateZ(0);
+    }
+
+    100% {
+        stroke-dashoffset: -133;
+        transform: translate3d(-90px, 0, 0);
+    }
+}

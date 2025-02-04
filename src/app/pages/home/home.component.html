@@ -61,6 +61,8 @@
   >
     <div
       class="max-w-[550px] lg-xl:[20px] 2xl:text-[25px] pt-14 m-auto lg:pt-0 lg:ms-16 lg:absolute lg:right-[70%] lg:top-[60px] z-10"
+      gsapAnimate
+      [animationType]="'fade-up'"
     >
       <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The combination of pictures
@@ -81,13 +83,16 @@
         src="https://creatsy.com/assets/modules/home/creators-visions/color-circle.png"
         class="mx-auto lg:ms-auto lg:mx-0"
         alt=""
+        gsapAnimate
+        [animationType]="'rotate'"
+        [delay]="0.5"
       />
       <h3
         class="text-[30px] relative my-4 m-auto lg:ms-0 after:h-[1px] 2xl:after:w-[7.5vw] after:hidden lg:after:block after:w-[7vw] after:bg-gray-500 after:absolute after:left-[calc(100%+15px)] after:top-[54%]"
       >
         Vibrant Colors
       </h3>
-      <p class="text-gray-400">
+      <p class="text-gray-400" gsapAnimate [animationType]="'fade-up'">
         We provide unique overlay layers for various textures and finishes that
         add realistic detail without causing a loss of contrast or saturation
         when applied to your designs.
@@ -102,7 +107,7 @@
       >
         Perfectly warped. Always.
       </h3>
-      <p class="text-gray-400">
+      <p class="text-gray-400" gsapAnimate [animationType]="'fade-up'">
         We use as many tools and techniques as possible with our smart object
         layers to ensure our product mockups are as realistic as they can be.
       </p>
@@ -181,7 +186,11 @@
     <div
       class="overlay bg-[#00000099] absolute w-full bottom-0 h-1/2 md:w-1/2 md:top-0 md:h-full flex justify-center items-center z-10"
     >
-      <p class="text-[15px] lg-xl:text-[26px] text-white font-light">
+      <p
+        class="text-[15px] lg-xl:text-[26px] text-white font-light"
+        gsapAnimate
+        [animationType]="'fade-up'"
+      >
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How we do it? We use
         professional <br />
         photography equipment and 3D software <br />
@@ -259,4 +268,35 @@
 <!-- testimonials section -->
 <section class="testimonial py-sec-p">
   <app-testimonials></app-testimonials>
+</section>
+<!-- subscribe section  -->
+<section class="py-sec-p lg-xl:py-[100px] hidden md:block bg-main-color">
+  <div class="container">
+    <h3
+      class="text-white text-[1.6875rem] xl:text-[3.125rem] leading-tight mb-7"
+    >
+      Grap 10% Off <span class="xl:text-[1.25rem]">(first purchase)</span><br />
+      and get instant updates.
+    </h3>
+    <div
+      class="card flex flex-col md:flex-row gap-4 w-full border-[#dedede33] border-y py-3 lg-xl:py-6"
+    >
+      <p-inputgroup>
+        <input
+          pInputText
+          type="email"
+          placeholder="Email"
+          class="w-full outline-none text-white text-[.9375rem] lg-xl:text-[1.5rem] placeholder:text-[.9375rem] lg-xl:placeholder:text-2xl placeholder:text-[#dedede33] bg-transparent caret-white"
+        />
+        <button
+          class="bg-transparent flex items-center text-white text-[.9375rem] lg-xl:text-2xl font-extralight hover:font-normal"
+        >
+          Subscribe
+          <i
+            class="fa-solid fa-arrow-right-long text-lg ms-2 translate-y-1"
+          ></i>
+        </button>
+      </p-inputgroup>
+    </div>
+  </div>
 </section>

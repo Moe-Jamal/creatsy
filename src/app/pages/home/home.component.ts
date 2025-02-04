@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InputGroup } from 'primeng/inputgroup';
 import { CustombtnComponent } from '../../shared/components/custombtn/custombtn.component';
 import { MainTitleComponent } from '../../shared/components/main-title/main-title.component';
 import { IBlog } from '../../shared/interfaces/iblog';
@@ -7,9 +8,11 @@ import { Categories } from './../../shared/interfaces/categories';
 import { HerosliderComponent } from './components/heroslider/heroslider.component';
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { GaspAnimationDirective } from '../../shared/directives/gasp-animation.directive';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [
     HerosliderComponent,
     WaveSvgComponent,
@@ -17,6 +20,8 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
     CustombtnComponent,
     MainTitleComponent,
     TestimonialsComponent,
+    InputGroup,
+    GaspAnimationDirective,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

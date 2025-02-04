@@ -2,7 +2,7 @@
     width: 100%;
     background-size: cover;
     background-position: center;
-    animation: changeBackground 16s infinite;
+    animation: changeBackground 24s infinite;
 }
 
 @keyframes changeBackground {
