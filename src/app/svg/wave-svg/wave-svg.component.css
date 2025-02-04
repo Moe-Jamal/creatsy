@@ -1,7 +1,7 @@
 #wave3 {
     stroke-dasharray: 0 0 101 0;
     stroke-dashoffset: 10px;
-    animation: wave 2s ease-out 1;
+    animation: wave 1.5s linear infinite;
 }
 
 @keyframes wave {

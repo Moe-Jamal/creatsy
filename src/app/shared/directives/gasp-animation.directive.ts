@@ -6,8 +6,6 @@ import {
   AfterViewInit,
   Inject,
   PLATFORM_ID,
-  SimpleChanges,
-  input,
 } from '@angular/core';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
