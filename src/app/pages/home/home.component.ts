@@ -60,65 +60,65 @@ export class HomeComponent {
     {
       name: 'Fabrics',
       imgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/fabrics-off.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/fabrics-off-v2.webp',
       hoverImgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/fabrics-on.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/fabrics-on-v2.webp',
     },
     {
       name: 'Fashion',
       imgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/fashion-off.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/fashion-off-v2.webp',
       hoverImgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/fashion-on.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/fashion-on-v2.webp',
     },
     {
       name: 'Wallart',
       imgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/wallart-off.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/wallart-off-v2.webp',
       hoverImgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/wallart-on.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/wallart-on-v2.webp',
     },
     {
       name: 'Home & Living',
       imgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/home-off.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/home-off-v2.webp',
       hoverImgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/home-on.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/home-on-v2.webp',
     },
     {
       name: 'Kids & Babies',
       imgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/kids-off.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/kids-off-v2.webp',
       hoverImgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/kids-on.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/kids-on-v2.webp',
     },
     {
       name: 'Drinkware',
       imgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/drinkware-off.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/drinkware-off-v2.webp',
       hoverImgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/drinkware-on.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/drinkware-on-v2.webp',
     },
     {
       name: 'Cosmetics & Beauty',
       imgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/cosmetics-off.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/cosmetics-off-v2.webp',
       hoverImgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/cosmetics-on.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/cosmetics-on-v2.webp',
     },
     {
       name: 'Electronics & Accessories',
       imgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/electronics-off.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/electronics-off-v2.webp',
       hoverImgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/electronics-on.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/electronics-on-v2.webp',
     },
     {
       name: 'Packaging & Wrapping',
       imgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/packaging-off.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/packaging-off-v2.webp',
       hoverImgSrc:
-        'https://creatsy.com/assets/modules/home/category-tiles/packaging-on.jpg',
+        'https://creatsy.com/assets/modules/home/category-tiles/packaging-on-v2.webp',
     },
   ];
 
