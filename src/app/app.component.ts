@@ -1,10 +1,7 @@
-import { FooterComponent } from './layout/footer/footer.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
-import { ProductCardComponent } from './shared/components/product-card/product-card.component';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
-import { HomeComponent } from './pages/home/home.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',

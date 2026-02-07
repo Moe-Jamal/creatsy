@@ -8,7 +8,7 @@ import { Categories } from './../../shared/interfaces/categories';
 import { HerosliderComponent } from './components/heroslider/heroslider.component';
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
-import { GaspAnimationDirective } from '../../shared/directives/gasp-animation.directive';
+import { GsapAnimationDirective } from '../../shared/directives/gsap-animation.directive';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +21,7 @@ import { GaspAnimationDirective } from '../../shared/directives/gasp-animation.d
     MainTitleComponent,
     TestimonialsComponent,
     InputGroup,
-    GaspAnimationDirective,
+    GsapAnimationDirective,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

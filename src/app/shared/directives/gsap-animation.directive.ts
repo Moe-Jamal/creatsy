@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 @Directive({
   selector: '[gsapAnimate]',
 })
-export class GaspAnimationDirective implements AfterViewInit {
+export class GsapAnimationDirective implements AfterViewInit {
   @Input() animationType: string = '';
   @Input() delay: number = 0;
 

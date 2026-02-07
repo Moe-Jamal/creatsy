@@ -1,6 +1,12 @@
 import { LogosvgComponent } from './../../svg/logosvg/logosvg.component';
 import { isPlatformBrowser } from '@angular/common';
-import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  HostListener,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { AccordionModule } from 'primeng/accordion';
 
 @Component({
@@ -10,7 +16,10 @@ import { AccordionModule } from 'primeng/accordion';
   styleUrl: './footer.component.css',
 })
 export class FooterComponent {
-  constructor(@Inject(PLATFORM_ID) private platformId: string) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: string,
+    private cd: ChangeDetectorRef
+  ) {}
 
   get isBrowserOnly(): boolean {
     return isPlatformBrowser(this.platformId);
@@ -43,7 +52,10 @@ export class FooterComponent {
   isDesktop: boolean = true;
 
   ngAfterViewInit(): void {
+    // setTimeout(() => {
+    // }, 0);
     this.cheackScreenSize();
+    this.cd.detectChanges();
   }
   cheackScreenSize() {
     if (this.isBrowserOnly) {

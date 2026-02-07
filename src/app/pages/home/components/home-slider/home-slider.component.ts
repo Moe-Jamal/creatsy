@@ -1,4 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
   Inject,
@@ -6,11 +7,12 @@ import {
   PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
+import {
+  CarouselComponent,
+  CarouselModule,
+  OwlOptions,
+} from 'ngx-owl-carousel-o';
 import { ProductCardComponent } from '../../../../shared/components/product-card/product-card.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-import { CarouselComponent } from 'ngx-owl-carousel-o';
-import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home-slider',

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { GaspAnimationDirective } from '../../directives/gasp-animation.directive';
+import { GsapAnimationDirective } from '../../directives/gsap-animation.directive';
 
 @Component({
   selector: 'app-main-title',
-  imports: [GaspAnimationDirective],
+  imports: [GsapAnimationDirective],
   templateUrl: './main-title.component.html',
   styleUrl: './main-title.component.css',
 })
